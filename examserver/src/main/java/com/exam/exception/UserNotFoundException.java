@@ -1,6 +1,6 @@
-package com.exam.helper;
+package com.exam.exception;
 
-public class UserNotFoundException extends Exception {
+public class UserNotFoundException extends RuntimeException {
 
     public UserNotFoundException() {
         super("User with this username not found in database !!");

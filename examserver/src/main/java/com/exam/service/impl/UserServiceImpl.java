@@ -1,15 +1,11 @@
 package com.exam.service.impl;
 
-import com.exam.helper.UserFoundException;
-import com.exam.helper.UserNotFoundException;
-import com.exam.model.Role;
 import com.exam.model.User;
 import com.exam.model.UserRole;
 import com.exam.repo.RoleRepository;
 import com.exam.repo.UserRepository;
 import com.exam.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -26,25 +22,41 @@ public class UserServiceImpl implements UserService {
 
     //creating user
     @Override
-    public User createUser(User user, Set<UserRole> userRoles) throws Exception {
+    public User createUser(User user, Set<UserRole> userRoles) throws RuntimeException {
 
 
-        User local = this.userRepository.findByUsername(user.getUsername());
-        if (local != null) {
-            System.out.println("User is already there !!");
-            throw new UserFoundException();
-        } else {
-            //user create
-            for (UserRole ur : userRoles) {
+        for(UserRole ur : userRoles){
+            if(!roleRepository.existsByRoleName(ur.getRole().getRoleName())){
                 roleRepository.save(ur.getRole());
             }
 
-            user.getUserRoles().addAll(userRoles);
-            local = this.userRepository.save(user);
-
         }
 
-        return local;
+        user.setUserRoles(userRoles);
+
+        if(!userRepository.existsByUsername(user.getUsername())){
+            return userRepository.save(user);
+        }else{
+            return  userRepository.findByUsername(user.getUsername());
+        }
+
+
+//        User local = this.userRepository.findByUsername(user.getUsername());
+//        if (local != null) {
+//            System.out.println("User is already there !!");
+//            throw new UserFoundException();
+//        } else {
+//            //user create
+//            for (UserRole ur : userRoles) {
+//                roleRepository.save(ur.getRole());
+//            }
+//
+//            user.getUserRoles().addAll(userRoles);
+//            local = this.userRepository.save(user);
+//
+//        }
+//
+//        return local;
     }
 
     //getting user by username
