@@ -3,7 +3,7 @@ This is an Exam Portal built using Java SpringBoot and Angular with MySQL as the
 
 # Installation
   * Clone the repository to your local machine.
-  * git clone https://github.com/yourusername/exam-portal.git
+  * git clone https://github.com/Rohit9252/Exam-portal.git
 
 # Install dependencies for the SpringBoot application.
 
