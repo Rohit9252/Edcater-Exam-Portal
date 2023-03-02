@@ -1,4 +1,4 @@
-# Educate-Exam Portal
+# Edcater-Exam Portal
 This is an Exam Portal built using Java SpringBoot and Angular with MySQL as the database. The application allows users to register and login, create and take exams, and view exam results.
 
 # ER-Digram
