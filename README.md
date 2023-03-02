@@ -2,7 +2,7 @@
 This is an Exam Portal built using Java SpringBoot and Angular with MySQL as the database. The application allows users to register and login, create and take exams, and view exam results.
 
 # ER-Digram
-[![image](https://www.linkpicture.com/q/exam-portal.png)](https://www.linkpicture.com/view.php?img=LPic640052bca8d43865866724)
+[![image](https://www.linkpicture.com/q/exam_1.png)](https://www.linkpicture.com/view.php?img=LPic640053e4be9051605785365)
 
 # Installation
   * Clone the repository to your local machine.
