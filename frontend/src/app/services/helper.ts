@@ -1,2 +1,2 @@
-let baseUrl = 'http://170.187.233.233:8111';
+let baseUrl = 'https://exam-portal-api-g9n2.onrender.com';
 export default baseUrl;
