@@ -13,7 +13,7 @@ This is an Exam Portal built using Java SpringBoot and Angular with MySQL as the
  [] Copy code
  * cd exam-portal/backend
  * ./mvnw install
-# Create a MySQL database.
+# Create a PostGreSQL database.
  * mysql -u root -p
  
 # CREATE DATABASE exam_portal;
@@ -36,6 +36,13 @@ Run the Angular application.
 ng serve `
 Open the application in your browser.
  * http://localhost:4200
+ 
+ # Admin details:
+ 
+  * UserName : admin123
+  * Password : admin@123
+ 
+ 
 Usage
  * Register for an account by clicking on the "Register" link in the navigation bar.
  * Login to your account.
